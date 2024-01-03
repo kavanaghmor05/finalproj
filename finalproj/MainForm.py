@@ -9,20 +9,29 @@ class MainForm(Form):
 		self.InitializeComponent()
 	
 	def InitializeComponent(self):
+		self._components = System.ComponentModel.Container()
 		self._AISpookyBOO = System.Windows.Forms.PictureBox()
 		self._CompOn1 = System.Windows.Forms.PictureBox()
 		self._CompOn2 = System.Windows.Forms.PictureBox()
 		self._CompOn3 = System.Windows.Forms.PictureBox()
 		self._ShellPCStill = System.Windows.Forms.PictureBox()
-		self._ShellPcM1 = System.Windows.Forms.PictureBox()
+		self._ShellPCM1 = System.Windows.Forms.PictureBox()
 		self._ShellPcM2 = System.Windows.Forms.PictureBox()
+		self._timerAI = System.Windows.Forms.Timer(self._components)
+		self._timerwalk = System.Windows.Forms.Timer(self._components)
+		self._timertbd = System.Windows.Forms.Timer(self._components)
+		self._groupBox1 = System.Windows.Forms.GroupBox()
+		self._label1 = System.Windows.Forms.Label()
+		self._label2 = System.Windows.Forms.Label()
+		self._label3 = System.Windows.Forms.Label()
 		self._AISpookyBOO.BeginInit()
 		self._CompOn1.BeginInit()
 		self._CompOn2.BeginInit()
 		self._CompOn3.BeginInit()
 		self._ShellPCStill.BeginInit()
-		self._ShellPcM1.BeginInit()
+		self._ShellPCM1.BeginInit()
 		self._ShellPcM2.BeginInit()
+		self._groupBox1.SuspendLayout()
 		self.SuspendLayout()
 		# 
 		# AISpookyBOO
@@ -64,14 +73,15 @@ class MainForm(Form):
 		self._ShellPCStill.Size = System.Drawing.Size(61, 58)
 		self._ShellPCStill.TabIndex = 7
 		self._ShellPCStill.TabStop = False
+		self._ShellPCStill.Click += self.ShellPCStillClick
 		# 
-		# ShellPcM1
+		# ShellPCM1
 		# 
-		self._ShellPcM1.Location = System.Drawing.Point(12, 76)
-		self._ShellPcM1.Name = "ShellPcM1"
-		self._ShellPcM1.Size = System.Drawing.Size(61, 58)
-		self._ShellPcM1.TabIndex = 8
-		self._ShellPcM1.TabStop = False
+		self._ShellPCM1.Location = System.Drawing.Point(12, 76)
+		self._ShellPCM1.Name = "ShellPCM1"
+		self._ShellPCM1.Size = System.Drawing.Size(61, 58)
+		self._ShellPCM1.TabIndex = 8
+		self._ShellPCM1.TabStop = False
 		# 
 		# ShellPcM2
 		# 
@@ -81,12 +91,60 @@ class MainForm(Form):
 		self._ShellPcM2.TabIndex = 9
 		self._ShellPcM2.TabStop = False
 		# 
+		# timerAI
+		# 
+		self._timerAI.Tick += self.Timer1Tick
+		# 
+		# groupBox1
+		# 
+		self._groupBox1.BackColor = System.Drawing.Color.SeaShell
+		self._groupBox1.Controls.Add(self._label1)
+		self._groupBox1.Controls.Add(self._label3)
+		self._groupBox1.Controls.Add(self._label2)
+		self._groupBox1.Location = System.Drawing.Point(735, 12)
+		self._groupBox1.Name = "groupBox1"
+		self._groupBox1.Size = System.Drawing.Size(153, 96)
+		self._groupBox1.TabIndex = 10
+		self._groupBox1.TabStop = False
+		self._groupBox1.Text = "Controls"
+		# 
+		# label1
+		# 
+		self._label1.Font = System.Drawing.Font("MS Gothic", 9.75, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0)
+		self._label1.Location = System.Drawing.Point(6, 16)
+		self._label1.Name = "label1"
+		self._label1.Size = System.Drawing.Size(141, 23)
+		self._label1.TabIndex = 11
+		self._label1.Text = "To walk use w-a-s-d"
+		self._label1.Click += self.Label1Click
+		# 
+		# label2
+		# 
+		self._label2.Font = System.Drawing.Font("MS Gothic", 9.75, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0)
+		self._label2.Location = System.Drawing.Point(6, 41)
+		self._label2.Name = "label2"
+		self._label2.Size = System.Drawing.Size(141, 23)
+		self._label2.TabIndex = 11
+		self._label2.Text = "To interact use z"
+		self._label2.Click += self.Label2Click
+		# 
+		# label3
+		# 
+		self._label3.Font = System.Drawing.Font("Chiller", 18, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0)
+		self._label3.Location = System.Drawing.Point(32, 64)
+		self._label3.Name = "label3"
+		self._label3.Size = System.Drawing.Size(87, 23)
+		self._label3.TabIndex = 12
+		self._label3.Text = "Good luck!"
+		self._label3.Click += self.Label3Click
+		# 
 		# MainForm
 		# 
 		self.BackColor = System.Drawing.Color.Gray
 		self.ClientSize = System.Drawing.Size(900, 750)
+		self.Controls.Add(self._groupBox1)
 		self.Controls.Add(self._ShellPcM2)
-		self.Controls.Add(self._ShellPcM1)
+		self.Controls.Add(self._ShellPCM1)
 		self.Controls.Add(self._ShellPCStill)
 		self.Controls.Add(self._CompOn3)
 		self.Controls.Add(self._CompOn2)
@@ -99,7 +157,33 @@ class MainForm(Form):
 		self._CompOn2.EndInit()
 		self._CompOn3.EndInit()
 		self._ShellPCStill.EndInit()
-		self._ShellPcM1.EndInit()
+		self._ShellPCM1.EndInit()
 		self._ShellPcM2.EndInit()
+		self._groupBox1.ResumeLayout(False)
 		self.ResumeLayout(False)
 
+		
+
+	def Timer1Tick(self, sender, e):
+		pass
+	
+		if ___ :
+			self._timerwalk = True
+			self._ShellPCStill.Visible = False
+			self._ShellPCM1.Visible = True
+			if self._timerwalk = ___ and self._PCM1.Visible = True:
+				self._ShellPCM1.Visible = False
+				self._ShellPCM2.Visible = True
+	
+
+	def ShellPCStillClick(self, sender, e):
+		pass
+
+	def Label3Click(self, sender, e):
+		pass
+
+	def Label1Click(self, sender, e):
+		pass
+
+	def Label2Click(self, sender, e):
+		pass
