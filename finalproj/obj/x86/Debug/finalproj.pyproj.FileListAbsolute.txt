@@ -12,3 +12,15 @@ C:\Users\klinkham.s\Desktop\finalproj\finalproj\finalproj\obj\x86\Debug\finalpro
 C:\Users\klinkham.s\Desktop\finalproj\finalproj\finalproj\obj\x86\Debug\finalproj.MainForm.resources
 C:\Users\klinkham.s\Desktop\finalproj\finalproj\finalproj\obj\x86\Debug\finalproj.pyproj.GenerateResource.Cache
 C:\Users\klinkham.s\Desktop\finalproj\finalproj\finalproj\obj\x86\Debug\finalproj.exe
+C:\Users\hill.l1\Desktop\finalproj\finalproj\bin\Debug\finalproj.exe.config
+C:\Users\hill.l1\Desktop\finalproj\finalproj\bin\Debug\finalproj.exe
+C:\Users\hill.l1\Desktop\finalproj\finalproj\bin\Debug\finalproj.dll
+C:\Users\hill.l1\Desktop\finalproj\finalproj\bin\Debug\Microsoft.Dynamic.dll
+C:\Users\hill.l1\Desktop\finalproj\finalproj\bin\Debug\Microsoft.Scripting.dll
+C:\Users\hill.l1\Desktop\finalproj\finalproj\bin\Debug\Microsoft.Scripting.Metadata.dll
+C:\Users\hill.l1\Desktop\finalproj\finalproj\bin\Debug\IronPython.xml
+C:\Users\hill.l1\Desktop\finalproj\finalproj\bin\Debug\IronPython.Modules.xml
+C:\Users\hill.l1\Desktop\finalproj\finalproj\obj\x86\Debug\finalproj.pyprojResolveAssemblyReference.cache
+C:\Users\hill.l1\Desktop\finalproj\finalproj\obj\x86\Debug\finalproj.MainForm.resources
+C:\Users\hill.l1\Desktop\finalproj\finalproj\obj\x86\Debug\finalproj.pyproj.GenerateResource.Cache
+C:\Users\hill.l1\Desktop\finalproj\finalproj\obj\x86\Debug\finalproj.exe
