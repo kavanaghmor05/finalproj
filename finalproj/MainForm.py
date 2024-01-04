@@ -75,6 +75,10 @@ class MainForm(Form):
 		self._ShellPCM2.TabIndex = 9
 		self._ShellPCM2.TabStop = False
 		# 
+		# timerwalk
+		# 
+		self._timerwalk.Tick += self.TimerwalkTick
+		# 
 		# timergame
 		# 
 		self._timergame.Tick += self.TimergameTick
@@ -85,7 +89,7 @@ class MainForm(Form):
 		self._groupBox1.Controls.Add(self._label2)
 		self._groupBox1.Controls.Add(self._label1)
 		self._groupBox1.Controls.Add(self._movecontr)
-		self._groupBox1.Location = System.Drawing.Point(737, 25)
+		self._groupBox1.Location = System.Drawing.Point(728, 12)
 		self._groupBox1.Name = "groupBox1"
 		self._groupBox1.Size = System.Drawing.Size(144, 109)
 		self._groupBox1.TabIndex = 10
@@ -96,7 +100,7 @@ class MainForm(Form):
 		# movecontr
 		# 
 		self._movecontr.Font = System.Drawing.Font("SimSun", 9.75, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0)
-		self._movecontr.Location = System.Drawing.Point(7, 20)
+		self._movecontr.Location = System.Drawing.Point(6, 13)
 		self._movecontr.Name = "movecontr"
 		self._movecontr.Size = System.Drawing.Size(128, 32)
 		self._movecontr.TabIndex = 0
@@ -114,8 +118,8 @@ class MainForm(Form):
 		# 
 		# label2
 		# 
-		self._label2.Font = System.Drawing.Font("SimSun", 9.75, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0)
-		self._label2.Location = System.Drawing.Point(10, 64)
+		self._label2.Font = System.Drawing.Font("Chiller", 18, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0)
+		self._label2.Location = System.Drawing.Point(6, 64)
 		self._label2.Name = "label2"
 		self._label2.Size = System.Drawing.Size(128, 32)
 		self._label2.TabIndex = 2
@@ -182,5 +186,59 @@ class MainForm(Form):
 		pass
 
 	def TimergameTick(self, sender, e):
-		Shell = self._ShellPCStill and self._ShellPCM1 and self._ShellPCM2
-		Monst = self._AISpookyBOO
+		pass
+	def TimerwalkTick(self, sender, e):
+		Still = self._ShellPCStill
+		M1 = self._ShellPCM1
+		M2 = self._ShellPCM2
+		
+	def MainFormKeyDown(self, sender, e):
+		walkin = self._timerwalk
+		
+		
+		
+		if e.KeyCode == Keys.W:
+			walkin.Enabled = True
+			Still.Visible = False
+			Still and M1 and M2
+			if walkin = 0:
+				M1.Visible = True
+				M2.Visible = False
+				
+			if walkin = 50:
+				M2.Visible = True
+				M1.Visible = False
+		
+		if e.KeyCose == Keys.S:
+			walkin.Enabled = True
+			Still.Visible = False
+			if walkin = 0:
+				M1.Visible = True
+				M2.Visible = False
+				
+			if walkin = 50:
+				M2.Visible = True
+				M1.Visible = False
+				
+		if e.KeyCode == Keys.A:
+			walkin.Enabled = True
+			Still.Visible = False
+			if walkin = 0:
+				M1.Visible = True
+				M2.Visible = False
+				
+			if walkin = 50:
+				M2.Visible = True
+				M1.Visible = False
+				
+		if e.KeyCode == Keys.D:
+			walkin.Enabled = True
+			Still.Visible = False
+			if walkin = 0:
+				M1.Visible = True
+				M2.Visible = False
+				
+			if walkin = 50:
+				M2.Visible = True
+				M1.Visible = False
+								
