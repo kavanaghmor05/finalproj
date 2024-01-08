@@ -49,7 +49,7 @@ class MainForm(Form):
 		# AISpookyBOO
 		# 
 		self._AISpookyBOO.BackColor = System.Drawing.Color.Transparent
-		self._AISpookyBOO.Location = System.Drawing.Point(79, 12)
+		self._AISpookyBOO.Location = System.Drawing.Point(12, 12)
 		self._AISpookyBOO.Name = "AISpookyBOO"
 		self._AISpookyBOO.Size = System.Drawing.Size(92, 109)
 		self._AISpookyBOO.TabIndex = 1
@@ -71,7 +71,7 @@ class MainForm(Form):
 		self._ShellPCM1.BackColor = System.Drawing.Color.Transparent
 		self._ShellPCM1.BackgroundImage = resources.GetObject("ShellPCM1.BackgroundImage")
 		self._ShellPCM1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-		self._ShellPCM1.Location = System.Drawing.Point(12, 632)
+		self._ShellPCM1.Location = System.Drawing.Point(12, 568)
 		self._ShellPCM1.Name = "ShellPCM1"
 		self._ShellPCM1.Size = System.Drawing.Size(61, 58)
 		self._ShellPCM1.TabIndex = 8
@@ -82,7 +82,7 @@ class MainForm(Form):
 		self._ShellPCM2.BackColor = System.Drawing.Color.Transparent
 		self._ShellPCM2.BackgroundImage = resources.GetObject("ShellPCM2.BackgroundImage")
 		self._ShellPCM2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-		self._ShellPCM2.Location = System.Drawing.Point(12, 632)
+		self._ShellPCM2.Location = System.Drawing.Point(12, 503)
 		self._ShellPCM2.Name = "ShellPCM2"
 		self._ShellPCM2.Size = System.Drawing.Size(61, 58)
 		self._ShellPCM2.TabIndex = 9
@@ -187,6 +187,7 @@ class MainForm(Form):
 		self._comp2.Size = System.Drawing.Size(90, 77)
 		self._comp2.TabIndex = 15
 		self._comp2.UseVisualStyleBackColor = False
+		self._comp2.Click += self.Comp2Click
 		# 
 		# comp3
 		# 
@@ -194,11 +195,12 @@ class MainForm(Form):
 		self._comp3.BackgroundImage = resources.GetObject("comp3.BackgroundImage")
 		self._comp3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
 		self._comp3.ForeColor = System.Drawing.Color.Transparent
-		self._comp3.Location = System.Drawing.Point(687, 503)
+		self._comp3.Location = System.Drawing.Point(679, 503)
 		self._comp3.Name = "comp3"
 		self._comp3.Size = System.Drawing.Size(98, 77)
 		self._comp3.TabIndex = 16
 		self._comp3.UseVisualStyleBackColor = False
+		self._comp3.Click += self.Comp3Click
 		# 
 		# compback
 		# 
@@ -374,7 +376,9 @@ class MainForm(Form):
 		
 	def MainFormKeyDown(self, sender, e):
 		walkin = self._timerwalk
-		
+		Still = self._ShellPCStill
+		M1 = self._ShellPCM1
+		M2 = self._ShellPCM2
 		
 		
 		if e.KeyCode == Keys.W:
@@ -389,7 +393,7 @@ class MainForm(Form):
 				M2.Visible = True
 				M1.Visible = False
 		
-		if e.KeyCose == Keys.S:
+		if e.KeyCode == Keys.S:
 			walkin.Enabled = True
 			Still.Visible = False
 			if walkin == 0:
@@ -458,7 +462,7 @@ class MainForm(Form):
 		self._compex.Visible = False
 
 	def Button1Click(self, sender, e):
-		if str(self._compans1.Text) = "1+1=" and str(self._compans2.Text) = "Pangea" and str(self._compans3.Text) = "Shell-Uh-Gaow-Ski":
+		if str(self._compans1.Text) == "1+1=" and str(self._compans2.Text) == "Pangea" and str(self._compans3.Text) == "Shell-Uh-Gaow-Ski":
 			self._compback.Visible = False
 			self._compques1.Visible = False
 			self._compans1.Visible = False
@@ -469,6 +473,35 @@ class MainForm(Form):
 			self._button1.Visible = False
 			self._button2.Visible = False
 			self._compex.Visible = False
-		
 		else:
-			application.Exit()
+			Application.Exit()
+
+	def Comp2Click(self, sender, e):
+		self._compback.Visible = True
+		self._compques1.Visible = True
+		self._compans1.Visible = True
+		self._compques2.Visible = True
+		self._compans2.Visible = True
+		self._compques3.Visible = True
+		self._compans3.Visible = True
+		self._button1.Visible = True
+		self._button2.Visible = True
+		self._compex.Visible = True
+		self._compques1.Text = "bees are"
+		self._compques2.Text = "read or read"
+		self._compques3.Text = "Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo"
+
+	def Comp3Click(self, sender, e):
+		self._compback.Visible = True
+		self._compques1.Visible = True
+		self._compans1.Visible = True
+		self._compques2.Visible = True
+		self._compans2.Visible = True
+		self._compques3.Visible = True
+		self._compans3.Visible = True
+		self._button1.Visible = True
+		self._button2.Visible = True
+		self._compex.Visible = True
+		self._compques1.Text = "Colorless green ideas sleep furiously"
+		self._compques2.Text = "All generlizations are false, including this one"
+		self._compques3.Text = "Has anyone really bean far even as decided to use even go want to do look more like?"
