@@ -22,7 +22,7 @@ class MainForm(Form):
 		self._movecontr = System.Windows.Forms.Label()
 		self._label1 = System.Windows.Forms.Label()
 		self._label2 = System.Windows.Forms.Label()
-		self._timerhuh = System.Windows.Forms.Timer(self._components)
+		self._timerques1 = System.Windows.Forms.Timer(self._components)
 		self._Count1 = System.Windows.Forms.Label()
 		self._Count2 = System.Windows.Forms.Label()
 		self._Count3 = System.Windows.Forms.Label()
@@ -39,6 +39,8 @@ class MainForm(Form):
 		self._button1 = System.Windows.Forms.Button()
 		self._button2 = System.Windows.Forms.Button()
 		self._compex = System.Windows.Forms.Button()
+		self._timerques2 = System.Windows.Forms.Timer(self._components)
+		self._timerques3 = System.Windows.Forms.Timer(self._components)
 		self._AISpookyBOO.BeginInit()
 		self._ShellPCStill.BeginInit()
 		self._ShellPCM1.BeginInit()
@@ -90,6 +92,7 @@ class MainForm(Form):
 		# 
 		# timerwalk
 		# 
+		self._timerwalk.Interval = 1500
 		self._timerwalk.Tick += self.TimerwalkTick
 		# 
 		# timergame
@@ -362,6 +365,9 @@ class MainForm(Form):
 		self._button1.Visible = False
 		self._button2.Visible = False
 		self._compex.Visible = False
+		self._timerques1.Enabled = False
+		self._timerques2.Enabled = False
+		self._timerques3.Enabled = False
 		Still = self._ShellPCStill
 		M1 = self._ShellPCM1
 		M2 = self._ShellPCM2
@@ -389,7 +395,7 @@ class MainForm(Form):
 				M1.Visible = True
 				M2.Visible = False
 				
-			if walkin == 50:
+			if walkin == 1000:
 				M2.Visible = True
 				M1.Visible = False
 		
@@ -400,7 +406,7 @@ class MainForm(Form):
 				M1.Visible = True
 				M2.Visible = False
 				
-			if walkin == 50:
+			if walkin == 1000:
 				M2.Visible = True
 				M1.Visible = False
 				
@@ -411,7 +417,7 @@ class MainForm(Form):
 				M1.Visible = True
 				M2.Visible = False
 				
-			if walkin == 50:
+			if walkin == 1000:
 				M2.Visible = True
 				M1.Visible = False
 				
@@ -422,7 +428,7 @@ class MainForm(Form):
 				M1.Visible = True
 				M2.Visible = False
 				
-			if walkin == 50:
+			if walkin == 1000:
 				M2.Visible = True
 				M1.Visible = False
 								
@@ -463,6 +469,7 @@ class MainForm(Form):
 
 	def Button1Click(self, sender, e):
 		if str(self._compans1.Text) == "1+1=" and str(self._compans2.Text) == "Pangea" and str(self._compans3.Text) == "Shell-Uh-Gaow-Ski":
+			self._timerques1.Enabled = True
 			self._compback.Visible = False
 			self._compques1.Visible = False
 			self._compans1.Visible = False
@@ -473,6 +480,33 @@ class MainForm(Form):
 			self._button1.Visible = False
 			self._button2.Visible = False
 			self._compex.Visible = False
+			
+		elif str(self._compans1.Text) == "Fish" and str(self._compans2.Text) == "read" and str(self._compans3.Text) == "correct":
+			self._timerques2.Enabled = True
+			self._compback.Visible = False
+			self._compques1.Visible = False
+			self._compans1.Visible = False
+			self._compques2.Visible = False
+			self._compans2.Visible = False
+			self._compques3.Visible = False
+			self._compans3.Visible = False
+			self._button1.Visible = False
+			self._button2.Visible = False
+			self._compex.Visible = False
+			
+		elif str(self._compans1.Text) == "also correct" and str(self._compans2.Text) == "True" and str(self._compans3.Text) == "wrong":
+			self._timerques3.Enabled = True
+			self._compback.Visible = False
+			self._compques1.Visible = False
+			self._compans1.Visible = False
+			self._compques2.Visible = False
+			self._compans2.Visible = False
+			self._compques3.Visible = False
+			self._compans3.Visible = False
+			self._button1.Visible = False
+			self._button2.Visible = False
+			self._compex.Visible = False
+			
 		else:
 			Application.Exit()
 
