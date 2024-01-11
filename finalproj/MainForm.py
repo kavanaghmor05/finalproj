@@ -92,7 +92,7 @@ class MainForm(Form):
 		# 
 		# timerwalk
 		# 
-		self._timerwalk.Interval = 1500
+		self._timerwalk.Interval = 20
 		self._timerwalk.Tick += self.TimerwalkTick
 		# 
 		# timergame
@@ -295,6 +295,7 @@ class MainForm(Form):
 		self._button2.TabIndex = 25
 		self._button2.Text = "Hint"
 		self._button2.UseVisualStyleBackColor = False
+		self._button2.Click += self.Button2Click
 		# 
 		# compex
 		# 
@@ -389,48 +390,19 @@ class MainForm(Form):
 		
 		if e.KeyCode == Keys.W:
 			walkin.Enabled = True
-			Still.Visible = False
-			Still and M1 and M2 
-			if walkin == 0:
-				M1.Visible = True
-				M2.Visible = False
-				
-			if walkin == 1000:
-				M2.Visible = True
-				M1.Visible = False
+			
 		
 		if e.KeyCode == Keys.S:
 			walkin.Enabled = True
-			Still.Visible = False
-			if walkin == 0:
-				M1.Visible = True
-				M2.Visible = False
-				
-			if walkin == 1000:
-				M2.Visible = True
-				M1.Visible = False
+			
 				
 		if e.KeyCode == Keys.A:
 			walkin.Enabled = True
-			Still.Visible = False
-			if walkin == 0:
-				M1.Visible = True
-				M2.Visible = False
-				
-			if walkin == 1000:
-				M2.Visible = True
-				M1.Visible = False
+			
 				
 		if e.KeyCode == Keys.D:
 			walkin.Enabled = True
-			Still.Visible = False
-			if walkin == 0:
-				M1.Visible = True
-				M2.Visible = False
-				
-			if walkin == 1000:
-				M2.Visible = True
-				M1.Visible = False
+			
 								
 
 	def Comp1Click(self, sender, e):
@@ -468,7 +440,7 @@ class MainForm(Form):
 		self._compex.Visible = False
 
 	def Button1Click(self, sender, e):
-		if str(self._compans1.Text) == "1+1=" and str(self._compans2.Text) == "Pangea" and str(self._compans3.Text) == "Shell-Uh-Gaow-Ski":
+		if str(self._compans1.Text) == "1+1=" and str(self._compans2.Text) == "Pangea" and str(self._compans3.Text) == "Shell-Uh-Gaow-Skee":
 			self._timerques1.Enabled = True
 			self._compback.Visible = False
 			self._compques1.Visible = False
@@ -539,3 +511,12 @@ class MainForm(Form):
 		self._compques1.Text = "Colorless green ideas sleep furiously"
 		self._compques2.Text = "All generlizations are false, including this one"
 		self._compques3.Text = "Has anyone really bean far even as decided to use even go want to do look more like?"
+
+	def Button2Click(self, sender, e):
+		if self._compques1.Text == "bees are" and self._compques2.Text == "read or read" and self._compques3.Text == "Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo":
+			MessageBox.Show("Buffalo")
+		
+		elif self._timerques2.Enabled == True:
+			MessageBOx.Show("Are you a man or a muppet?")
+		
+	
