@@ -7,6 +7,9 @@ from System.Windows.Forms import *
 class MainForm(Form):
 	def __init__(self):
 		self.InitializeComponent()
+		self.R = System.Random()
+		self.AIup = 0
+		self.AIdown = 0
 	
 	def InitializeComponent(self):
 		self._components = System.ComponentModel.Container()
@@ -51,7 +54,8 @@ class MainForm(Form):
 		# AISpookyBOO
 		# 
 		self._AISpookyBOO.BackColor = System.Drawing.Color.Transparent
-		self._AISpookyBOO.Location = System.Drawing.Point(12, 12)
+		self._AISpookyBOO.BackgroundImage = resources.GetObject("AISpookyBOO.BackgroundImage")
+		self._AISpookyBOO.Location = System.Drawing.Point(400, 52)
 		self._AISpookyBOO.Name = "AISpookyBOO"
 		self._AISpookyBOO.Size = System.Drawing.Size(92, 109)
 		self._AISpookyBOO.TabIndex = 1
@@ -89,6 +93,10 @@ class MainForm(Form):
 		self._ShellPCM2.Size = System.Drawing.Size(61, 58)
 		self._ShellPCM2.TabIndex = 9
 		self._ShellPCM2.TabStop = False
+		# 
+		# timermonst
+		# 
+		self._timermonst.Tick += self.TimermonstTick
 		# 
 		# timerwalk
 		# 
@@ -366,9 +374,11 @@ class MainForm(Form):
 		self._button1.Visible = False
 		self._button2.Visible = False
 		self._compex.Visible = False
+		self._AISpookyBOO.Visible = False
 		self._timerques1.Enabled = False
 		self._timerques2.Enabled = False
 		self._timerques3.Enabled = False
+		self._timermonst.Enabled = False
 		Still = self._ShellPCStill
 		M1 = self._ShellPCM1
 		M2 = self._ShellPCM2
@@ -386,6 +396,7 @@ class MainForm(Form):
 		Still = self._ShellPCStill
 		M1 = self._ShellPCM1
 		M2 = self._ShellPCM2
+		
 		
 		
 		if e.KeyCode == Keys.W:
@@ -452,6 +463,9 @@ class MainForm(Form):
 			self._button1.Visible = False
 			self._button2.Visible = False
 			self._compex.Visible = False
+			self._compans1.Text = ""
+			self._compans2.Text = ""
+			self._compans3.Text = ""
 			
 		elif str(self._compans1.Text) == "Fish" and str(self._compans2.Text) == "read" and str(self._compans3.Text) == "correct":
 			self._timerques2.Enabled = True
@@ -465,6 +479,9 @@ class MainForm(Form):
 			self._button1.Visible = False
 			self._button2.Visible = False
 			self._compex.Visible = False
+			self._compans1.Text = ""
+			self._compans2.Text = ""
+			self._compans3.Text = ""
 			
 		elif str(self._compans1.Text) == "also correct" and str(self._compans2.Text) == "True" and str(self._compans3.Text) == "wrong":
 			self._timerques3.Enabled = True
@@ -478,6 +495,9 @@ class MainForm(Form):
 			self._button1.Visible = False
 			self._button2.Visible = False
 			self._compex.Visible = False
+			self._compans1.Text = ""
+			self._compans2.Text = ""
+			self._compans3.Text = ""
 			
 		else:
 			Application.Exit()
@@ -516,7 +536,15 @@ class MainForm(Form):
 		if self._compques1.Text == "bees are" and self._compques2.Text == "read or read" and self._compques3.Text == "Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo":
 			MessageBox.Show("Buffalo")
 		
-		elif self._timerques2.Enabled == True:
-			MessageBOx.Show("Are you a man or a muppet?")
+		elif self._compques1.Text == "Colorless green ideas sleep furiously" and self._compques2.Text == "All generlizations are false, including this one" and self._compques3.Text == "Has anyone really bean far even as decided to use even go want to do look more like?":
+			MessageBox.Show("Some of these are correct and some are not?")
+		
+		elif self._compques1.Text == "one plus one equals" and self._compques2.Text == "Name the continent" and self._compques3.Text == "How to pronounce Szelogowski":
+			MessageBox.Show("Those symbol buttons look shiny, don't they?")
+		
 		
 	
+
+	def TimermonstTick(self, sender, e):
+		self._AISpookyBOO.Top += self.AIup
+		self._AISpookyBOO.Left += 8 * self.AIup
