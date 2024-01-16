@@ -62,7 +62,7 @@ class MainForm(Form):
 		self._ShellPCStill.BackColor = System.Drawing.Color.Transparent
 		self._ShellPCStill.BackgroundImage = resources.GetObject("ShellPCStill.BackgroundImage")
 		self._ShellPCStill.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-		self._ShellPCStill.Location = System.Drawing.Point(12, 632)
+		self._ShellPCStill.Location = System.Drawing.Point(12, 641)
 		self._ShellPCStill.Name = "ShellPCStill"
 		self._ShellPCStill.Size = System.Drawing.Size(61, 58)
 		self._ShellPCStill.TabIndex = 7
@@ -73,7 +73,7 @@ class MainForm(Form):
 		self._ShellPCM1.BackColor = System.Drawing.Color.Transparent
 		self._ShellPCM1.BackgroundImage = resources.GetObject("ShellPCM1.BackgroundImage")
 		self._ShellPCM1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-		self._ShellPCM1.Location = System.Drawing.Point(12, 568)
+		self._ShellPCM1.Location = System.Drawing.Point(12, 577)
 		self._ShellPCM1.Name = "ShellPCM1"
 		self._ShellPCM1.Size = System.Drawing.Size(61, 58)
 		self._ShellPCM1.TabIndex = 8
@@ -84,7 +84,7 @@ class MainForm(Form):
 		self._ShellPCM2.BackColor = System.Drawing.Color.Transparent
 		self._ShellPCM2.BackgroundImage = resources.GetObject("ShellPCM2.BackgroundImage")
 		self._ShellPCM2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-		self._ShellPCM2.Location = System.Drawing.Point(12, 503)
+		self._ShellPCM2.Location = System.Drawing.Point(12, 513)
 		self._ShellPCM2.Name = "ShellPCM2"
 		self._ShellPCM2.Size = System.Drawing.Size(61, 58)
 		self._ShellPCM2.TabIndex = 9
@@ -377,7 +377,8 @@ class MainForm(Form):
 		Still.Visible = True
 
 	def TimergameTick(self, sender, e):
-		pass
+		if ShellPCStill.Right >= Count1.Left and ShellPCStill.Bottom >= Count1.Top and ShellPCStill.Top <= Count1.Bottom and ShellPCStill.Left <= Count1.Right:
+			pass
 	def TimerwalkTick(self, sender, e):
 		pass
 		
@@ -389,10 +390,11 @@ class MainForm(Form):
 		
 		
 		if e.KeyCode == Keys.W:
+			self.flagright = False
 			walkin.Enabled = True
 			
-		
 		if e.KeyCode == Keys.S:
+			self.flagright = True
 			walkin.Enabled = True
 			
 				
@@ -402,6 +404,16 @@ class MainForm(Form):
 				
 		if e.KeyCode == Keys.D:
 			walkin.Enabled = True
+			
+			
+		#if flagd == True:
+			#ShellPCStill.Top += 5
+		#if flagd == False:
+			#ShellPCStill.Top -= 5
+		#if ShellPCStill.Top <= 10:
+			#tmr.Enabled = False
+		#if ShellPCStill.Bottom >= self.Height - 50:
+			#tmr.Enabled = False
 			
 								
 
